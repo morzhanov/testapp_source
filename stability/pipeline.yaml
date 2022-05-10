@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: CronWorkflow
+metadata:
+  name: verify-testapp
+  namespace: argo
+  labels:
+    clusterName: hubcluster
+spec:
+  workflowMetadata:
+    labels:
+      example: 'true'
+  schedule: '* * * * *'
+  workflowSpec:
+    entrypoint: verify-testapp
+    templates:
+      - name: verify-testapp
+        inputs:
+          parameters:
+          - name: app-url
+            value: "{{workflow.parameters.app-url}}"
+        script:
+          image: python:alpine3.6
+          command: [python]
+          source: |
+            from urllib.request import urlopen
+            import time
+            import sys
+            import os
+            url = '{{inputs.parameters.app-url}}'
+            for i in range(5):
+                print(url)
+                with urlopen("http://" + url) as response:
+                    if response.read().decode("utf-8") != "Hello, World!":
+                        print("Did not return correctly.")
+                        os.exit(1)
+                time.sleep(1)
+            print("Test completed correctly.")
