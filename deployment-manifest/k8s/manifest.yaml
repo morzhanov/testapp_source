@@ -12,21 +12,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: testapp
+  name: docker.io/1mihirpandya/testapp
 spec:
   replicas: 3
   revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: testapp
+      app: docker.io/1mihirpandya/testapp
   template:
     metadata:
       labels:
-        app: testapp
+        app: docker.io/1mihirpandya/testapp
     spec:
       containers:
-      - image: testapp
-        name: testapp
+      - image: docker.io/1mihirpandya/testapp
+        name: docker.io/1mihirpandya/testapp
         imagePullPolicy: Never
         ports:
         - containerPort: 5000
@@ -34,10 +34,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: testapp
+  name: docker.io/1mihirpandya/testapp
 spec:
   ports:
   - port: 5000
     targetPort: 5000
   selector:
-    app: testapp
+    app: docker.io/1mihirpandya/testapp
