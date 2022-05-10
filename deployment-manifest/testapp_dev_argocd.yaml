@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/mihirpandya-greenops/atlas-playground.git
     targetRevision: main
-    path: basic/argo_manifest
+    path: deployment-manifest/k8s
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
