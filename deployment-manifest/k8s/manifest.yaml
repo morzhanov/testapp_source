@@ -36,6 +36,7 @@ kind: Service
 metadata:
   name: testapp
 spec:
+  type: NodePort
   ports:
   - port: 5000
     targetPort: 5000
