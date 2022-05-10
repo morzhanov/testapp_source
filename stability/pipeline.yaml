@@ -17,7 +17,7 @@ spec:
         inputs:
           parameters:
           - name: app-url
-            value: "{{workflow.parameters.app-url}}"
+            value: 192.168.64.12:32075
         script:
           image: python:alpine3.6
           command: [python]
