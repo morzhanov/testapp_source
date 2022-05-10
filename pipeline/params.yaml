@@ -1,0 +1,12 @@
+arguments:
+  parameters:
+    - name: application-name-dev
+      value: atlastestapp-dev
+    - name: application-name-stag
+      value: atlastestapp-staging
+    - name: revision
+      value: main
+    - name: argocd-server-address
+      value: 192.168.64.12:31644
+    - name: argocd-credentials-secret
+      value: argocd-credentials-secret
