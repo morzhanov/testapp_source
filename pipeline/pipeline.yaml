@@ -1,5 +1,5 @@
 metadata:
-  generateName: deploy-app-xyz-
+  generateName: deploy-testapp-
   namespace: argo
   labels:
     clusterName: hubcluster
@@ -8,6 +8,10 @@ spec:
   templates:
   - name: starter
     steps:
+    - - name: create-and-verify-pr
+        templateRef:
+          name: github-pr
+          template: pr
     - - name: deploy-to-dev
         templateRef:
           name: argocd2
