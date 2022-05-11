@@ -17,7 +17,7 @@ spec:
         inputs:
           parameters:
           - name: app-url
-            value: 192.168.64.12:30784
+            value: 192.168.64.12:31879
         script:
           image: python:alpine3.6
           command: [python]
