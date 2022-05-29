@@ -2,7 +2,7 @@ metadata:
   generateName: deploy-testapp-
   namespace: argo
   labels:
-   clusterName: hubcluster
+   clusterName: hubcluster1
 spec:
   entrypoint: starter
   templates:
