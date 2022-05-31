@@ -1,4 +1,4 @@
 arguments:
   parameters:
   - name: app-url
-    value: 192.168.64.12:32075
+    value: 192.168.64.12:31879
