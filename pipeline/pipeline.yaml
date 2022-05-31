@@ -14,7 +14,7 @@ spec:
           template: pr
     - - name: deploy-to-dev
         templateRef:
-          name: argocd-step
+          name: argocdstep
           template: argocd-sync-and-wait
         arguments:
           parameters:
