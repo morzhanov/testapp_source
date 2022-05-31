@@ -10,7 +10,7 @@ spec:
     steps:
     - - name: create-and-verify-pr
         templateRef:
-          name: github-pr
+          name: githubpr
           template: pr
     - - name: deploy-to-dev
         templateRef:
@@ -26,7 +26,7 @@ spec:
             value: "{{workflow.parameters.argocd-server-address}}"
     - - name: deploy-to-staging
         templateRef:
-          name: argocd-step
+          name: argocdstep
           template: argocd-sync-and-wait
         arguments:
           parameters:
