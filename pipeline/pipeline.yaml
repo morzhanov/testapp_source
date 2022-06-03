@@ -8,10 +8,6 @@ spec:
   templates:
   - name: starter
     steps:
-    - - name: create-and-verify-pr
-        templateRef:
-          name: github-pr
-          template: pr
     - - name: deploy-to-dev
         templateRef:
           name: argocd-step
@@ -20,18 +16,6 @@ spec:
           parameters:
           - name: application-name
             value: "{{workflow.parameters.application-name-dev}}"
-          - name: revision
-            value: "{{workflow.parameters.revision}}"
-          - name: argocd-server-address
-            value: "{{workflow.parameters.argocd-server-address}}"
-    - - name: deploy-to-staging
-        templateRef:
-          name: argocd-step
-          template: argocd-sync-and-wait
-        arguments:
-          parameters:
-          - name: application-name
-            value: "{{workflow.parameters.application-name-stag}}"
           - name: revision
             value: "{{workflow.parameters.revision}}"
           - name: argocd-server-address
