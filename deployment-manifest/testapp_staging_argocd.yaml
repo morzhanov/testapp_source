@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: atlastestapp-staging
+  name: testapp-staging
   namespace: argocd
 spec:
   project: default
