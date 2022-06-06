@@ -10,7 +10,7 @@ spec:
     steps:
     - - name: create-and-verify-pr
         templateRef:
-          name: githubpr
+          name: github-pr
           template: pr
     - - name: deploy-to-dev
         templateRef:
