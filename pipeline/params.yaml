@@ -7,6 +7,6 @@ arguments:
     - name: revision
       value: main
     - name: argocd-server-address
-      value: 192.168.64.18:30105
+      value: 192.168.64.21:32645
     - name: argocd-credentials-secret
       value: argocd-user
