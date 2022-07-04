@@ -5,6 +5,10 @@ metadata:
    clusterName: hubcluster
 spec:
   entrypoint: starter
+  arguments:
+    parameters:
+    - name: example
+      value: example
   templates:
   - name: starter
     steps:
