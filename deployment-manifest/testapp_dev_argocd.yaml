@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/mihirpandya-greenops/testapp_source.git
+    repoURL: https://github.com/morzhanov/testapp_source.git
     targetRevision: main
     path: deployment-manifest/k8s
   destination:
